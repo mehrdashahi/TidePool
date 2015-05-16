@@ -1,0 +1,60 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ecosystem;
+
+/**
+ *
+ * @author mehrdad
+ */
+
+ import java.util.ArrayList;
+
+public class TidePool {
+    
+    protected ArrayList<Organism> organisms;
+
+    public TidePool() {
+        
+        this.organisms = new ArrayList<>();
+         
+        
+    }
+
+    public void add(Organism organism) { 
+        this.organisms.add(organism);
+    }
+    
+    public int getSize() {
+        return this.organisms.size();
+    }
+    /**
+     * Changes the position of all Organisms within the TidePool 
+     * according to their speed and direction: move for one unit of time.
+     */
+     
+    public void move() { 
+        
+        organisms.stream().forEach((org) -> { 
+            org.move();
+        });
+    }
+   
+    @Override
+    public String toString() { 
+        
+        String temp = "";
+        temp = this.organisms.stream().map((org) -> "{" + org.toString() + "},").reduce(temp, String::concat);
+        return temp.substring(0, temp.length()-1);
+        
+    }
+    
+    
+    
+    
+    
+        
+    
+}
