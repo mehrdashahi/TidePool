@@ -1,0 +1,52 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ecosystem;
+
+/**
+ *
+ * @author mehrdad
+ */
+public class main {
+    
+    public static void main(String[] args) {
+        
+
+       Organism lobster = new Anthropod("Homarus gammarus", 0, 0,"north",2,  10);
+       Organism Crab = new Anthropod("Hermit Crab", 1, 0,"east",3,  5);
+       
+       Organism Spider = new Anthropod("Balck Widow", 2, 2,"north",4,  8);
+       
+       
+       System.out.println(lobster);
+       lobster.move();
+       lobster.move();
+       lobster.move();
+       lobster.move();
+       lobster.move();
+       lobster.move();
+       System.out.println(lobster);
+       
+       TidePool NorthAmerica = new TidePool();
+       NorthAmerica.add(lobster);
+       NorthAmerica.add(Spider);
+       NorthAmerica.add(Crab); 
+       
+       System.out.println(Spider);
+        
+        System.out.println(NorthAmerica);
+        NorthAmerica.move();
+        System.out.println(NorthAmerica);
+       
+       
+       
+       
+       
+       
+       
+        
+    }
+    
+}
